@@ -13,14 +13,14 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.util.concurrent.CountDownLatch;
 
 @Slf4j
-@RunWith(SpringRunner.class)
-@SpringBootTest(classes = RocketmqApplication.class)
+//@RunWith(SpringRunner.class)
+//@SpringBootTest(classes = RocketmqApplication.class)
 public class Demo04ProducerTest {
 
     @Autowired
     private Demo04Producer producer;
 
-    @Test
+   // @Test
     public void testSyncSend() throws InterruptedException {
         int id = (int) (System.currentTimeMillis() / 1000);
         SendResult result = producer.syncSend(id);

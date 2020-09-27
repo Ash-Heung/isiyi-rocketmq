@@ -19,7 +19,7 @@ public class Demo01ProducerTest {
 
     @Autowired
     private Demo01Producer producer;
-    @Test
+   // @Test
     public void testSyncSend() throws InterruptedException {
         int id = (int) (System.currentTimeMillis() / 1000);
         SendResult result = producer.syncSend(id);
@@ -29,7 +29,7 @@ public class Demo01ProducerTest {
         new CountDownLatch(1).await();
     }
 
-    @Test
+   // @Test
     public void testASyncSend() throws InterruptedException {
         int id = (int) (System.currentTimeMillis() / 1000);
         producer.asyncSend(id, new SendCallback() {
@@ -50,7 +50,7 @@ public class Demo01ProducerTest {
         new CountDownLatch(1).await();
     }
 
-    @Test
+   // @Test
     public void testOnewaySend() throws InterruptedException {
         int id = (int) (System.currentTimeMillis() / 1000);
         producer.onewaySend(id);
